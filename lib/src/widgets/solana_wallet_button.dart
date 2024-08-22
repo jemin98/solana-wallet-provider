@@ -172,22 +172,6 @@ class _SolanaWalletButtonState extends State<SolanaWalletButton> {
   Widget build(final BuildContext context) {
     final SolanaWalletProvider provider = SolanaWalletProvider.of(context);
     final Account? connectedAccount = provider.connectedAccount;
-    return TextButton(
-      onPressed: _onPressed(connectedAccount, provider), 
-      onLongPress: widget.onLongPress,
-      onHover: widget.onHover,
-      onFocusChange: widget.onFocusChange,
-      style: (connectedAccount != null ? widget.connectedStyle : widget.disconnectedStyle) 
-        ?? TextButton.styleFrom(textStyle: const TextStyle(inherit: true)),
-      focusNode: widget.focusNode,
-      autofocus: widget.autofocus,
-      clipBehavior: widget.clipBehavior,
-      statesController: widget.statesController,
-      child: connectedAccount != null
-        ? widget.connectedBuilder?.call(context, connectedAccount) 
-          ?? _connectBuilder(context, connectedAccount)
-        : widget.disconnectedBuilder?.call(context) 
-          ?? _disconnectBuilder(context),
-    );
+    return Container();
   }
 }
